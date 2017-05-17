@@ -14,14 +14,15 @@
   "securityDefinitions": {
     "auth": {
       "type": "oauth2",
-      "flow": "application",
+      "scopes": {
+        "read:LH Open API": "read access"
+      },
+      "flow": "accessCode",
       "authorizationUrl": "https://api.lufthansa.com/v1/oauth/token",
-	  "scopes": {
-		"read:LH Open API": "read access"
-	  }
+      "tokenUrl": "https://api.lufthansa.com/v1/oauth/token"
     }
   },
-    "schemes": [
+  "schemes": [
     "https"
   ],
   "consumes": [
