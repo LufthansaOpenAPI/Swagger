@@ -11,13 +11,14 @@
   },
   "host": "api.lufthansa.com",
   "basePath": "/v1",
-   "securityDefinitions": {
+  "securityDefinitions": {
     "auth": {
       "type": "oauth2",
       "scopes": {
         "read:LH Open API": "read access"
       },
-      "flow": "application",
+      "flow": "accessCode",
+      "authorizationUrl": "https://api.lufthansa.com/v1/oauth/token",
       "tokenUrl": "https://api.lufthansa.com/v1/oauth/token"
     }
   },
@@ -38,7 +39,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Countries",
+        "operationId": "ReferencesCountriesByCountryCodeGet",
         "produces": [
           "application/json"
         ],
@@ -86,8 +87,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -111,7 +113,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Cities",
+        "operationId": "ReferencesCitiesByCityCodeGet",
         "produces": [
           "application/json"
         ],
@@ -159,8 +161,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -184,7 +187,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Airports",
+        "operationId": "ReferencesAirportsByAirportCodeGet",
         "produces": [
           "application/json"
         ],
@@ -239,8 +242,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -264,7 +268,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Nearest Airports",
+        "operationId": "ReferencesAirportsNearestByLatitudeAndLongitudeGet",
         "produces": [
           "application/json"
         ],
@@ -304,8 +308,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -329,7 +334,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Airlines",
+        "operationId": "ReferencesAirlinesByAirlineCodeGet",
         "produces": [
           "application/json"
         ],
@@ -370,8 +375,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -395,7 +401,7 @@
         "tags": [
           "Reference Data"
         ],
-        "operationId": "Aircraft",
+        "operationId": "ReferencesAircraftByAircraftCodeGet",
         "produces": [
           "application/json"
         ],
@@ -436,8 +442,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -461,7 +468,7 @@
         "tags": [
           "Offers"
         ],
-        "operationId": "Seat Maps",
+        "operationId": "OffersSeatmapsDestinationDateCabinClassByFlightNumberAndOriginGet",
         "produces": [
           "application/json"
         ],
@@ -513,8 +520,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -538,7 +546,7 @@
         "tags": [
           "Offers"
         ],
-        "operationId": "Lounges",
+        "operationId": "OffersLoungesByLocationGet",
         "produces": [
           "application/json"
         ],
@@ -583,8 +591,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -608,7 +617,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Flight Status",
+        "operationId": "OperationsFlightstatusByFlightNumberAndDateGet",
         "produces": [
           "application/json"
         ],
@@ -653,8 +662,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -678,7 +688,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Flight Status by Route",
+        "operationId": "OperationsFlightstatusRouteDateByOriginAndDestinationGet",
         "produces": [
           "application/json"
         ],
@@ -730,8 +740,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -755,7 +766,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Flight Status at Arrival Airport",
+        "operationId": "OperationsFlightstatusArrivalsByAirportCodeAndFromDateTimeGet",
         "produces": [
           "application/json"
         ],
@@ -800,8 +811,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -825,7 +837,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Flight Status at Departure Airport",
+        "operationId": "OperationsFlightstatusDeparturesByAirportCodeAndFromDateTimeGet",
         "produces": [
           "application/json"
         ],
@@ -870,8 +882,9 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
@@ -895,7 +908,7 @@
         "tags": [
           "Operations"
         ],
-        "operationId": "Flight Schedules",
+        "operationId": "OperationsSchedulesFromDateTimeByOriginAndDestinationGet",
         "produces": [
           "application/json"
         ],
@@ -954,8 +967,156 @@
           "200": {
             "description": "",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/cargo/shipmentTracking/{aWBPrefix}-{aWBNumber}": {
+      "get": {
+        "description": "With this tracking service you can easily retrieve your shipment or flight status information.",
+        "summary": "Shipment Tracking",
+        "tags": [
+          "Cargo"
+        ],
+        "operationId": "CargoShipmentTrackingByAWBPrefixAndAWBNumberGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "aWBPrefix",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "aWBPrefix : Represents the airline that is the owner of this AWB, i.e. \"020\" = Lufthansa Cargo, format : [0-9]{3} e.g. 020"
+          },
+          {
+            "name": "aWBNumber",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "aWBNumber : The Air Waybill Number , format : [0-9]{8} e.g. 08002050"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "http header: application/json or application/xml (Acceptable values are: \"application/json\", \"application/xml\")"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/cargo/getRoute/{origin}-{destination}/{fromDate}/{productCode}": {
+      "get": {
+        "description": "Retrieve a list of all possible flights (both direct and connecting) between two airports on a given date. Routes are available for today and up to days in the future.",
+        "summary": "Retrieve all flights",
+        "tags": [
+          "Cargo"
+        ],
+        "operationId": "CargoGetRouteFromDateProductCodeByOriginAndDestinationGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Departure Airport : 3-letter IATA airport code, e.g. FRA."
+          },
+          {
+            "name": "destination",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Arrival airport : 3-letter IATA airport code, e.g. HKG."
+          },
+          {
+            "name": "fromDate",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Departure date in the local time of the departure airport. Based on LAT (Latest Acceptance Time). format : yyyy-MM-dd eg : 2017-07-15"
+          },
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "enum": [
+              "FAN",
+              "FCO",
+              "FCP",
+              "FDG",
+              "FTF",
+              "FUN",
+              "FWN",
+              "YCO",
+              "YCP",
+              "YDG",
+              "YNB",
+              "YNZ",
+              "YTF",
+              "YUN",
+              "ZXB",
+              "ZXF",
+              "ZXR"
+            ],
+            "type": "string",
+            "description": "Product code for requested service and specials : 3-letter eg: YNZ"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "http header: application/json or application/xml (Acceptable values are: \"application/json\", \"application/xml\")"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            },
+            "examples": {}
           }
         },
         "security": [
