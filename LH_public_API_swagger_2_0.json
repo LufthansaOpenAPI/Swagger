@@ -17,8 +17,7 @@
       "scopes": {
         "read:LH Open API": "read access"
       },
-      "flow": "accessCode",
-      "authorizationUrl": "https://api.lufthansa.com/v1/oauth/token",
+      "flow": "application",
       "tokenUrl": "https://api.lufthansa.com/v1/oauth/token"
     }
   },
